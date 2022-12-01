@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success!</title>
+</head>
+<body>
+    <h1>You have finished the test!!!</h1>
+    <div>
+        <span>
+            Your score: {{ right_questions_count }} from {{ questions_count }}
+        </span>
+    </div>
+    <div><a href="{% url 'index_page' %}">ON MAIN PAGE...</a></div>
+</body>
+</html>

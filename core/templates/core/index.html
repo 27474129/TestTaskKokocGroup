@@ -1,0 +1,24 @@
+{% load static %}
+{% load core_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if request.session.keys %}
+        <div>
+            <span>Your username: </span>
+            <span>{{ user_id|get_username_by_id }}</span>
+        </div>
+        <div><a href="{% url 'logout_page' %}">Log out</a></div>
+    {% else %}
+        <div><a href="{% url 'auth_page' %}">Authenticate</a></div>
+    {% endif %}
+    <h3>Tests: </h3>
+    {% for test in tests %}
+        <div><a href="http://0.0.0.0:8000/test/{{ test.pk }}">{{ test.title }}</a></div>
+    {% endfor %}
+</body>
+</html>

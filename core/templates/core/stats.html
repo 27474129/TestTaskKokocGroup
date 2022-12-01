@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stats</title>
+</head>
+<body>
+    {% for username, user_data in users.items %}
+        <div>
+            <div>
+                <span>Username:</span>
+                <span>{{ username }}</span>
+            </div>
+            <div>
+                <span>Balance: </span>
+                <span>{{ user_data.balance }}</span>
+            </div>
+            <div>
+                <span>Test finished:</span>
+                <span>{{ user_data.finished_tests_count }}</span>
+            </div>
+        </div>
+        <br>
+    {% endfor %}
+</body>
+</html>

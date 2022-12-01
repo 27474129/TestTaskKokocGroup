@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.username.errors }}
+        {{ form.password1.errors }}
+        {{ form.password2.errors }}
+        <div>
+            <span>Username: </span>
+            <span>{{ form.username }}</span>
+        </div>
+        <div>
+            <span>Password: </span>
+            <span>{{ form.password1 }}</span>
+        </div>
+        <div>
+            <span>Repeat: </span>
+            <span>{{ form.password2 }}</span>
+        </div>
+        <button type="submit">Regist</button>
+    </form>
+    <div>
+        <a href="{% url 'auth_page' %}">Already have an account?</a>
+    </div>
+</body>
+</html>

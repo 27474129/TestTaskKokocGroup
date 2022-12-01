@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        {% for question in questions %}
+            <div>
+                <span>Question: </span>
+                <span>{{ question.question_text }}</span>
+            </div>
+            <input type="text" name="{{ question.pk }}">
+        {% endfor %}
+        <br>
+        <button type="submit">Send answers</button>
+    </form>
+</body>
+</html>

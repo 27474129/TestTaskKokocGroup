@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auth</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div>
+            <span>Username: </span>
+            <span>{{ form.username }}</span>
+        </div>
+        <div>
+            <span>Password: </span>
+            <span>{{ form.password }}</span>
+        </div>
+        <button type="submit">Auth</button>
+    </form>
+    <div><a href="{% url 'reg_page' %}">Still haven`t an account?</a></div>
+</body>
+</html>
